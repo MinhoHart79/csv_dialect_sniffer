@@ -1,6 +1,6 @@
 [project]
 name = "csv-dialect-sniffer"
-version = "0.1.0"
+version = "0.1.1"
 description = "Replaces the standard csv.Sniffer with a deterministic, transparent delimiter, quote, and escape detector."
 requires-python = ">=3.10"
 dependencies = []
