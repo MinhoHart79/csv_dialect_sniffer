@@ -44,3 +44,10 @@ It also does not detect line terminators (it accepts whatever the input
 contains) and does not infer `skipinitialspace`, because that interacts with
 quoting in ways a transparent scorer should not paper over. If your files
 mix spaces and quotes at field boundaries, preprocess them first.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
